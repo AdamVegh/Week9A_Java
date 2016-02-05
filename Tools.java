@@ -29,6 +29,6 @@ public class Tools {
 	}
 	
 	public static String toXMLTag(String tag, String value){
-		return "<" + tag + ">" + value + " </" + tag + ">";
+		return "<" + tag + ">" + value + "</" + tag + ">";
 	}
 }

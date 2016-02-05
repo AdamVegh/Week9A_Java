@@ -1,28 +1,30 @@
 package Movies;
 
 import java.util.List;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class MovieManager {
-	static final String XML_FILE_PATH = "XML/movies.xml";
+	static final String XML_FILE_PATH = "movies.xml";
 	public static void main(String[] args){
 		Person[] actors = new Person[5];
 		
 		actors[0] = new Person();
-		Person diCaprio = actors[0];
-		diCaprio.setFirstName("Leonardo");
-		diCaprio.setLastName("Di Caprio");
-		diCaprio.setGender(Gender.MALE);
-		diCaprio.setHasOscar(false);
-		diCaprio.setHasGoldenGlobe(true);
-		
-		actors[1] = new Person();
-		Person winslet = actors[1];
+		Person winslet = actors[0];
 		winslet.setFirstName("Kate");
 		winslet.setLastName("Winslet");
 		winslet.setGender(Gender.FEMALE);
 		winslet.setHasOscar(true);
 		winslet.setHasGoldenGlobe(true);
+		
+		actors[1] = new Person();
+		Person diCaprio = actors[1];
+		diCaprio.setFirstName("Leonardo");
+		diCaprio.setLastName("Di Caprio");
+		diCaprio.setGender(Gender.MALE);
+		diCaprio.setHasOscar(false);
+		diCaprio.setHasGoldenGlobe(true);
 		
 		actors[2] = new Person();
 		Person reeves = actors[2];
@@ -60,7 +62,6 @@ public class MovieManager {
 		cast.add(diCaprio);
 		cast.add(winslet);
 		titanic.setCast(cast);
-		
 		cast.clear();
 		
 		movies.add(new Movie());
@@ -72,7 +73,6 @@ public class MovieManager {
 		cast.add(reeves);
 		cast.add(moss);
 		theMatrix.setCast(cast);
-		
 		cast.clear();
 		
 		movies.add(new Movie());
@@ -84,5 +84,19 @@ public class MovieManager {
 		cast.add(cotillard);
 		cast.add(diCaprio);
 		inception.setCast(cast);
+		
+		String toXML = "";
+		
+		try {
+			FileWriter writer = new FileWriter(XML_FILE_PATH);
+			for (Movie movie : movies) {
+				toXML += movie.toXMLTag();
+			}
+			writer.write(Tools.toXMLTag("movies", toXML));
+			writer.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+			
+		}
 	}
 }
