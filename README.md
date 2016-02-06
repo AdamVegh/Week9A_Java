@@ -12,5 +12,6 @@ A short description about the *.java files:
   - <i>getMovieTitles</i> with input of <i>movies</i> and return with a list of <i>string</i> which shows the title of every movie.
   - <i>toXMLTag</i> with input of <i>tag</i> and <i>value</i> of this and return with a <i>string</i> which has XML from.
 - [MovieManager.java](Movies/MovieManager.java): this class contains the <i>main</i> function which write out the data of movies into an XML file.  
-This is the <i>UML class diagram</i> of this program:
+  
+This is the <i>UML class diagram</i> of this program:  
 ![](movies_uml.jpg)
