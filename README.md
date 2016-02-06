@@ -11,4 +11,4 @@ A short description about the *.java files:
   - <i>countMoviesPerPerson</i> with input of <i>movies</i> and return with a <i>hashmap</i> which shows that in how many movies was an actor playing role.
   - <i>getMovieTitles</i> with input of <i>movies</i> and return with a list of <i>string</i> which shows the title of every movie.
   - <i>toXMLTag</i> with input of <i>tag</i> and <i>value</i> of this and return with a <i>string</i> which has XML from.
-- [MovieManager.java](Movies/MovieManager.java): this class contains the <i>main</i> function which write out the data into an XML file. 
+- [MovieManager.java](Movies/MovieManager.java): this class contains the <i>main</i> function which write out the data of movies into an XML file. 
