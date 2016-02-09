@@ -12,47 +12,22 @@ public class Movie {
 	private double rate;
 	private ArrayList<Person> cast;
 	
-	public String getTitle() {
-		return title;
-	}
+	public String getTitle() { return title; }
+	public void setTitle(String title) { this.title = title; }
 
-	public void setTitle(String title) {
-		this.title = title;
-	}
+	public Genre getGenre() { return genre; }
+	public void setGenre(Genre genre) { this.genre = genre; }
 
-	public Genre getGenre() {
-		return genre;
-	}
+	public long getDuration() { return duration; }
+	public void setDuration(long duration) { this.duration = duration; }
 
-	public void setGenre(Genre genre) {
-		this.genre = genre;
-	}
+	public double getRate() { return rate; }
+	public void setRate(double rate) { this.rate = rate; }
 
-	public long getDuration() {
-		return duration;
-	}
+	public ArrayList<Person> getCast() { return cast; }
+	public void setCast(List<Person> cast) { this.cast = (ArrayList<Person>) cast; }
 
-	public void setDuration(long duration) {
-		this.duration = duration;
-	}
-
-	public double getRate() {
-		return rate;
-	}
-
-	public void setRate(double rate) {
-		this.rate = rate;
-	}
-
-	public ArrayList<Person> getCast() {
-		return cast;
-	}
-
-	public void setCast(List<Person> cast2) {
-		this.cast = (ArrayList<Person>) cast2;
-	}
-
-	public String toXMLTag(){
+	public String toXMLString(){
 		String title = Tools.toXMLTag("title", this.title);
 		String genre = Tools.toXMLTag("genre", this.genre.toString());
 		String duration = Tools.toXMLTag("title", Long.toString(this.duration));
@@ -63,10 +38,7 @@ public class Movie {
 	
 	private static String castToXML(List<Person> people){
 		String personToTag = "";
-		for (Person person: people){
-			personToTag += person.toXMLString();
-		}
+		for (Person person: people) { personToTag += person.toXMLString(); }
 		return personToTag;
-		
 	}
 }

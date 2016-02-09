@@ -89,14 +89,11 @@ public class MovieManager {
 		
 		try {
 			FileWriter writer = new FileWriter(XML_FILE_PATH);
-			for (Movie movie : movies) {
-				toXML += movie.toXMLTag();
-			}
+			for (Movie movie : movies) { toXML += movie.toXMLString(); }
 			writer.write(Tools.toXMLTag("movies", toXML));
 			writer.close();
 		} catch (IOException e) {
 			e.printStackTrace();
-			
 		}
 	}
 }

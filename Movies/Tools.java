@@ -22,9 +22,7 @@ public class Tools {
 	public static String[] getMovieTitles(List<Movie> movies){
 		int size = movies.size();
 		String[] titles = new String[size];
-		for(int i=0; i<size; i++){
-			titles[i] = movies.get(i).getTitle();
-		}
+		for(int i=0; i<size; i++) { titles[i] = movies.get(i).getTitle(); }
 		return titles;
 	}
 	
